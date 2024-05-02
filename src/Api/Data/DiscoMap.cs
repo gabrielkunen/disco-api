@@ -27,6 +27,10 @@ namespace Api.Data
             builder.HasMany(disco => disco.Performers)
                 .WithMany(perf => perf.Discos)
                 .UsingEntity("discoperformer");
+
+            builder.HasMany(disco => disco.Musicas)
+                .WithOne(musica => musica.Disco)
+                .HasForeignKey(musica => musica.IdDisco);
         }
     }
 }
