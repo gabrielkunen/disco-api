@@ -13,15 +13,15 @@ namespace Api.Data
 
         public DbSet<Disco> Discos { get; set; }
         public DbSet<Label> Labels { get; set; }
-        public DbSet<Performer> Performers { get; set; }
         public DbSet<Musica> Musicas { get; set; }
+        public DbSet<Cantor> Cantores { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new DiscoMap());
             modelBuilder.ApplyConfiguration(new LabelMap());
-            modelBuilder.ApplyConfiguration(new PerformerMap());
             modelBuilder.ApplyConfiguration(new MusicaMap());
+            modelBuilder.ApplyConfiguration(new CantorMap());
         }
 
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)

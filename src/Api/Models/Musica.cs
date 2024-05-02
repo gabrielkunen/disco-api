@@ -7,5 +7,6 @@
 
         public int IdDisco { get; set; }
         public Disco Disco { get; set; }
+        public List<Cantor> Cantores { get; set; } = [];
     }
 }

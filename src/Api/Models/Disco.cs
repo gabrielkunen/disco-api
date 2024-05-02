@@ -9,6 +9,5 @@
         public int IdLabel { get; set; }
         public Label Label { get; set; }
         public List<Musica> Musicas { get; set; } = [];
-        public List<Performer> Performers { get; set; } = [];
     }
 }

@@ -10,9 +10,9 @@ namespace Api.Data
         {
             builder.ToTable("musica");
 
-            builder.HasKey(m => m.Id);
+            builder.HasKey(musica => musica.Id);
 
-            builder.Property(m => m.Nome)
+            builder.Property(musica => musica.Nome)
                 .IsRequired()
                 .HasColumnType("VARCHAR")
                 .HasMaxLength(100);
@@ -20,6 +20,10 @@ namespace Api.Data
             builder.HasOne(musica => musica.Disco)
                 .WithMany(disco => disco.Musicas)
                 .HasForeignKey(musica => musica.IdDisco);
+
+            builder.HasMany(musica => musica.Cantores)
+                .WithMany(cantor => cantor.Musicas)
+                .UsingEntity("cantormusica");
         }
     }
 }

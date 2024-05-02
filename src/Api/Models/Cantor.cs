@@ -1,9 +1,9 @@
 ﻿namespace Api.Models
 {
-    public class Performer
+    public class Cantor
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        public List<Disco> Discos { get; set; } = [];
+        public List<Musica> Musicas { get; set; }
     }
 }

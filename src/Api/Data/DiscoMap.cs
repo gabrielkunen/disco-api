@@ -10,12 +10,12 @@ namespace Api.Data
         {
             builder.ToTable("disco");
 
-            builder.HasKey(x => x.Id);
-            builder.Property(p => p.NumeroCatalogo)
+            builder.HasKey(disco => disco.Id);
+            builder.Property(disco => disco.NumeroCatalogo)
                 .IsRequired()
                 .HasColumnType("VARCHAR")
                 .HasMaxLength(20);
-            builder.Property(p => p.Titulo)
+            builder.Property(disco => disco.Titulo)
                 .IsRequired()
                 .HasColumnType("VARCHAR")
                 .HasMaxLength(200);
@@ -23,10 +23,6 @@ namespace Api.Data
             builder.HasOne(disco => disco.Label)
                 .WithMany(label => label.Discos)
                 .HasForeignKey(disco => disco.IdLabel);
-
-            builder.HasMany(disco => disco.Performers)
-                .WithMany(perf => perf.Discos)
-                .UsingEntity("discoperformer");
 
             builder.HasMany(disco => disco.Musicas)
                 .WithOne(musica => musica.Disco)

@@ -10,18 +10,18 @@ namespace Api.Data
         {
             builder.ToTable("label");
 
-            builder.HasKey(x => x.Id);
-            builder.Property(p => p.Nome)
+            builder.HasKey(label => label.Id);
+            builder.Property(label => label.Nome)
                 .IsRequired()
                 .HasColumnType("VARCHAR")
                 .HasMaxLength(20);
 
-            builder.Property(p => p.Regiao)
+            builder.Property(label => label.Regiao)
                 .IsRequired()
                 .HasColumnType("VARCHAR")
                 .HasMaxLength(30);
 
-            builder.Property(p => p.Descricao)
+            builder.Property(label => label.Descricao)
                 .IsRequired(false)
                 .HasColumnType("VARCHAR")
                 .HasMaxLength(300);
