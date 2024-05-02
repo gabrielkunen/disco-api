@@ -27,6 +27,10 @@ namespace Api.Data
             builder.HasMany(disco => disco.Musicas)
                 .WithOne(musica => musica.Disco)
                 .HasForeignKey(musica => musica.IdDisco);
+
+            builder.HasOne(disco => disco.BarCode)
+                .WithOne(barcode => barcode.Disco)
+                .HasForeignKey<BarCode>(barcode => barcode.IdDisco);
         }
     }
 }

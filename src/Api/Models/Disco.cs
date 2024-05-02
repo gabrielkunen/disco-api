@@ -8,6 +8,9 @@
 
         public int IdLabel { get; set; }
         public Label Label { get; set; }
+
+        public BarCode BarCode { get; set; }
+
         public List<Musica> Musicas { get; set; } = [];
     }
 }
