@@ -19,6 +19,17 @@ namespace Api.Data
                 .IsRequired()
                 .HasColumnType("VARCHAR")
                 .HasMaxLength(200);
+            builder.Property(disco => disco.DataLancamento)
+                .IsRequired()
+                .HasColumnType("DATETIME");
+
+            builder.Property(disco => disco.PrecoLancamento)
+                .IsRequired()
+                .HasColumnType("INT");
+
+            builder.Property(disco => disco.TipoMedia)
+                .IsRequired()
+                .HasColumnType("INT");
 
             builder.HasOne(disco => disco.Label)
                 .WithMany(label => label.Discos)
